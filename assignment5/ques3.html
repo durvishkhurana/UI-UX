@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Question 3 - Form Validation</title>
+  <style>
+    body { font-family: "Segoe UI", sans-serif; background: #f4f6f8; margin: 0; }
+    header, footer { background: #2c3e50; color: white; text-align: center; padding: 15px; }
+    main { display: flex; justify-content: center; padding: 40px; }
+    .card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); width: 350px; text-align: center; }
+    input { padding: 10px; width: 85%; margin: 8px 0; border: 1px solid #ccc; border-radius: 6px; }
+    button { padding: 10px 20px; border: none; background: #27ae60; color: white; border-radius: 6px; cursor: pointer; transition: 0.3s; }
+    button:hover { background: #1e8449; }
+    p.result { margin-top: 15px; font-weight: 500; }
+    a.back { display: block; margin-top: 20px; text-decoration: none; color: #3498db; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <header><h2>Q3 - Form Validation</h2></header>
+  <main>
+    <div class="card">
+      <form onsubmit="validateForm(event)">
+        <input type="text" id="name" placeholder="Enter Name"><br>
+        <input type="text" id="email" placeholder="Enter Email"><br>
+        <input type="number" id="age" placeholder="Enter Age"><br>
+        <button type="submit">Validate</button>
+      </form>
+      <p class="result" id="output"></p>
+      <a class="back" href="index.html">⬅ Back to Home</a>
+    </div>
+  </main>
+  <footer>&copy; 2025 | Assignment 5</footer>
+
+  <script>
+    function validateForm(event) {
+      event.preventDefault();
+      let name = document.getElementById("name").value.trim();
+      let email = document.getElementById("email").value.trim();
+      let age = parseInt(document.getElementById("age").value);
+      let msg = "";
+      if (name === "") msg = "⚠ Name cannot be empty";
+      else if (!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email)) msg = "⚠ Invalid email format";
+      else if (isNaN(age) || age < 18 || age > 100) msg = "⚠ Age must be between 18 and 100";
+      else msg = "✅ Form is valid!";
+      document.getElementById("output").innerHTML = msg;
+    }
+  </script>
+</body>
+</html>

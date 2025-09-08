@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Question 4 - Student Object</title>
+  <style>
+    body { font-family: "Segoe UI", sans-serif; background: #f4f6f8; margin: 0; }
+    header, footer { background: #2c3e50; color: white; text-align: center; padding: 15px; }
+    main { display: flex; justify-content: center; padding: 40px; }
+    .card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); width: 350px; text-align: center; }
+    button { padding: 10px 20px; border: none; background: #9b59b6; color: white; border-radius: 6px; cursor: pointer; transition: 0.3s; }
+    button:hover { background: #8e44ad; }
+    p.result { margin-top: 15px; text-align: left; }
+    a.back { display: block; margin-top: 20px; text-decoration: none; color: #3498db; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <header><h2>Q4 - Student Object</h2></header>
+  <main>
+    <div class="card">
+      <button onclick="showStudent()">Show Student Info</button>
+      <p class="result" id="output"></p>
+      <a class="back" href="index.html">⬅ Back to Home</a>
+    </div>
+  </main>
+  <footer>&copy; 2025 | Assignment 5</footer>
+
+  <script>
+    function showStudent() {
+      let student = { name: "Durvish Khurana", age: 20, grade: "A" };
+      student.class = "CS101";
+      student.grade = "A";
+      let res = "";
+      for (let key in student) res += key + ": " + student[key] + "<br>";
+      document.getElementById("output").innerHTML = res;
+    }
+  </script>
+</body>
+</html>

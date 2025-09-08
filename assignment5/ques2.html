@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Question 2 - Array Operations</title>
+  <style>
+    body { font-family: "Segoe UI", sans-serif; background: #f4f6f8; margin: 0; }
+    header, footer { background: #2c3e50; color: white; text-align: center; padding: 15px; }
+    main { display: flex; justify-content: center; padding: 40px; }
+    .card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); width: 400px; text-align: center; }
+    input { padding: 10px; width: 85%; margin: 8px 0; border: 1px solid #ccc; border-radius: 6px; }
+    button { padding: 10px 20px; border: none; background: #3498db; color: white; border-radius: 6px; cursor: pointer; transition: 0.3s; }
+    button:hover { background: #2980b9; }
+    p.result { margin-top: 15px; font-weight: 500; text-align: left; }
+    a.back { display: block; margin-top: 20px; text-decoration: none; color: #3498db; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <header><h2>Q2 - Array Operations</h2></header>
+  <main>
+    <div class="card">
+      <input type="text" id="arrInput" placeholder="Enter 5 numbers, comma separated">
+      <br>
+      <button onclick="processArray()">Process</button>
+      <p class="result" id="output"></p>
+      <a class="back" href="index.html">⬅ Back to Home</a>
+    </div>
+  </main>
+  <footer>&copy; 2025 | Assignment 5</footer>
+
+  <script>
+    function processArray() {
+      let arr = document.getElementById("arrInput").value.split(",").map(Number);
+      if (arr.length < 5 || arr.some(isNaN)) {
+        document.getElementById("output").innerHTML = "⚠ Please enter 5 valid numbers";
+        return;
+      }
+      let res = `
+        Original: ${arr.join(", ")}<br>
+        Largest: ${Math.max(...arr)}<br>
+        Smallest: ${Math.min(...arr)}<br>
+        Sorted Asc: ${arr.slice().sort((a,b)=>a-b).join(", ")}<br>
+        Sorted Desc: ${arr.slice().sort((a,b)=>b-a).join(", ")}
+      `;
+      document.getElementById("output").innerHTML = res;
+    }
+  </script>
+</body>
+</html>

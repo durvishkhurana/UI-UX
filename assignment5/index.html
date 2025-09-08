@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Assignment 5 - Home Page</title>
+  <style>
+    /* Reset and global styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: rgba(44, 62, 80, 0.9);
+      color: white;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+      letter-spacing: 1px;
+    }
+
+    p.subtitle {
+      text-align: center;
+      margin: 20px auto;
+      font-size: 18px;
+      color: #2c3e50;
+      font-weight: 500;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 30px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+    }
+
+    .card a {
+      text-decoration: none;
+      color: #2c3e50;
+      font-weight: bold;
+      font-size: 18px;
+      display: block;
+      margin-bottom: 8px;
+      transition: color 0.3s;
+    }
+
+    .card a:hover {
+      color: #3498db;
+    }
+
+    .card p {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    footer {
+      background: rgba(44, 62, 80, 0.9);
+      color: #ecf0f1;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      margin-top: auto;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 22px;
+      }
+      p.subtitle {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Assignment 5 - JavaScript Questions</h1>
+  </header>
+
+  <p class="subtitle">Click a card to open the solution for each question</p>
+
+  <main>
+    <div class="cards">
+      <div class="card">
+       <a href="./ques1.html"> Question 1</a>
+        <p>Take two numbers as input and display their sum, difference, product, and quotient.</p>
+      </div>
+
+      <div class="card">
+        <a href="./ques2.html">Question 2</a>
+        <p>Create an array of 5 numbers, find the largest and smallest, and sort in ascending/descending order.</p>
+      </div>
+
+      <div class="card">
+        <a href="./ques3.html">Question 3</a>
+        <p>Form with name, email, and age fields. Validate input values before submission.</p>
+      </div>
+
+      <div class="card">
+        <a href="./ques4.html">Question 4</a>
+        <p>Create a student object, add new properties, update grades, and display info.</p>
+      </div>
+
+      <div class="card">
+        <a href="./ques5.html">Question 5</a>
+        <p>Use array methods (filter, map, reduce) to process numbers and calculate results.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 | Assignment 5 | Designed for practice
+  </footer>
+</body>
+</html>

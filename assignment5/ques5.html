@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Question 5 - Array Methods</title>
+  <style>
+    body { font-family: "Segoe UI", sans-serif; background: #f4f6f8; margin: 0; }
+    header, footer { background: #2c3e50; color: white; text-align: center; padding: 15px; }
+    main { display: flex; justify-content: center; padding: 40px; }
+    .card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); width: 400px; text-align: center; }
+    input { padding: 10px; width: 85%; margin: 8px 0; border: 1px solid #ccc; border-radius: 6px; }
+    button { padding: 10px 20px; border: none; background: #e67e22; color: white; border-radius: 6px; cursor: pointer; transition: 0.3s; }
+    button:hover { background: #d35400; }
+    p.result { margin-top: 15px; font-weight: 500; text-align: left; }
+    a.back { display: block; margin-top: 20px; text-decoration: none; color: #3498db; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <header><h2>Q5 - Array Methods</h2></header>
+  <main>
+    <div class="card">
+      <input type="text" id="arrInput" placeholder="Enter numbers, comma separated"><br>
+      <button onclick="processArray()">Run</button>
+      <p class="result" id="output"></p>
+      <a class="back" href="index.html">⬅ Back to Home</a>
+    </div>
+  </main>
+  <footer>&copy; 2025 | Assignment 5</footer>
+
+  <script>
+    function processArray() {
+      let arr = document.getElementById("arrInput").value.split(",").map(Number);
+      if (arr.some(isNaN)) {
+        document.getElementById("output").innerHTML = "⚠ Please enter valid numbers";
+        return;
+      }
+      let processed = arr.filter(n => n % 2 === 0).map(n => n * 2);
+      let sum = processed.reduce((a,b)=>a+b,0);
+      let res = `
+        Original: ${arr.join(", ")}<br>
+        After filtering (remove odds) & doubling: ${processed.join(", ")}<br>
+        Sum: ${sum}
+      `;
+      document.getElementById("output").innerHTML = res;
+    }
+  </script>
+</body>
+</html>

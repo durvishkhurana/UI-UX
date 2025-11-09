@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Your Trip - TravelBuddy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navigation -->
+<div class="unique-nav">
+  <a href="index.html">Home</a>
+  <a href="packages.html">Packages</a>
+  <a href="booking.html">Booking</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="about.html">About Us</a>
+</div>
+
+<!-- Floating Elements -->
+<div class="floating cloud"></div>
+<div class="floating plane"></div>
+
+<section class="diagonal">
+  <h1>📝 Book Your Adventure</h1>
+  <p>Fill out the form below and let us plan your dream getaway.</p>
+
+  <div class="form-container">
+    <form novalidate>
+      <div class="form-group">
+        <label for="name">👤 Full Name</label>
+        <input type="text" id="name" placeholder="Enter your name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">📧 Email Address</label>
+        <input type="email" id="email" placeholder="example@mail.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="checkin">📅 Check In</label>
+        <input type="date" id="checkin" required>
+        <label for="checkout" style="margin-top:10px; display:block;">📅 Check Out</label>
+        <input type="date" id="checkout" required>
+      </div>
+
+      <div class="form-group">
+        <label for="destination">🌍 Destination</label>
+        <select id="destination" required>
+          <option value="">-- Select a Destination --</option>
+          <option>Bali, Indonesia</option>
+          <option>Paris, France</option>
+          <option>Dubai, UAE</option>
+          <option>Tokyo, Japan</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="package">🎒 Package Type</label>
+        <select id="package" required>
+          <option value="">-- Choose Package --</option>
+          <option>Beach Paradise</option>
+          <option>Romantic Getaway</option>
+          <option>Luxury Escape</option>
+          <option>Cultural Journey</option>
+        </select>
+      </div>
+
+      <!-- guests and promo will be inserted by script if missing (script also handles price estimate) -->
+      <div class="form-group">
+        <label for="notes">📝 Special Requests</label>
+        <textarea id="notes" rows="3" placeholder="Any special requirements?"></textarea>
+      </div>
+
+      <button type="submit" class="btn">🚀 Confirm Booking</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 TravelBuddy</p>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
